@@ -23,9 +23,9 @@
 
     <div class="menu-window">
       <div class="projects-list">
-        <router-link to="/">Harmonizando</router-link>
-        <router-link to="/">Ana Carolina Pereira</router-link>
-        <router-link to="/">TwoBe Creative</router-link>
+        <router-link to="/project/ana-carolina-pereira">Ana Carolina Pereira</router-link>
+        <router-link to="/project/twobe-creative">TwoBe Creative</router-link>
+        <router-link to="/project/harmonizando">Harmonizando</router-link>
       </div>
       <div class="about-section">
         <div class="about">
@@ -216,6 +216,10 @@ export default {
     cursor: pointer;
     transition: 0.5s;
 
+    @media screen and (max-width: 599px) {
+      left: pxToEm(20);
+    }
+
     &.open-menu {
       opacity: 1;
       pointer-events: all;
@@ -251,6 +255,15 @@ export default {
     pointer-events: none;
     transition: 0.5s;
 
+    @media screen and (max-width: 599px) {
+      flex-direction: column;
+      justify-content: flex-start;
+
+      .about-section {
+        padding-top: pxToEm(50);
+      }
+    }
+
     &.open-menu {
       opacity: 1;
       pointer-events: all;
@@ -262,22 +275,39 @@ export default {
       flex-direction: column;
       padding-top: pxToEm(190);
 
+      @media screen and (max-width: 599px) {
+        width: 100%;
+        height: auto;
+        padding-top: pxToEm(80);
+      }
+
       > a {
-        font-size: 32px;
+        font-size: pxToEm(32);
         font-family: "Montserrat-Bold";
         margin-bottom: pxToEm(50);
+
+        @media screen and (max-width: 599px) {
+          font-size: pxToEm(32);
+          margin: 0 pxToEm(20);
+          margin-bottom: pxToEm(25);
+          text-align: center;
+        }
       }
 
       > div {
         margin-bottom: pxToEm(100);
 
+        @media screen and (max-width: 599px) {
+          text-align: center;
+        }
+
         .title {
-          font-size: 32px;
+          font-size: pxToEm(32);
           font-family: "Montserrat-Bold";
         }
 
         .text {
-          font-size: 26px;
+          font-size: pxToEm(26);
           display: flex;
           flex-direction: column;
         }
@@ -287,10 +317,20 @@ export default {
         .text {
           flex-direction: row;
 
+          @media screen and (max-width: 599px) {
+            justify-content: space-around;
+            width: 50%;
+            margin: auto;
+          }
+
           p {
             img {
               height: 100%;
               margin-right: pxToEm(50);
+
+              @media screen and (max-width: 599px) {
+                margin: 0;
+              }
             }
           }
         }
