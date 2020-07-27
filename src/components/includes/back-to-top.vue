@@ -74,8 +74,8 @@ $circle: 50%;
   transition: 0.5s;
 
   @media screen and (max-width: 599px) {
-    bottom: pxToEm(20);
-    right: pxToEm(20);
+    bottom: pxToEm(10);
+    right: pxToEm(10);
   }
 
   #btt-btn {

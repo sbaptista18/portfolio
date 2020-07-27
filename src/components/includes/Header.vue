@@ -116,11 +116,21 @@ export default {
   position: fixed;
   width: 100%;
 
+  @media screen and (max-width: 599px) {
+    height: pxToEm(80);
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
   #logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: 50%;
+
+    @media screen and (max-width: 599px) {
+      transform: translateX(-50%) scale(0.8);
+      top: 130%;
+    }
 
     .name {
       width: pxToEm(568);
@@ -174,6 +184,11 @@ export default {
     transform: translateY(-50%);
     cursor: pointer;
     transition: 0.5s;
+
+    @media screen and (max-width: 599px) {
+      left: pxToEm(20);
+      top: pxToEm(40);
+    }
 
     &.open-menu {
       opacity: 0;

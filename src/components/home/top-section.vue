@@ -84,7 +84,11 @@ export default {
       height: 200%;
       background-position: top center;
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: cover;
+
+      @media screen and (max-width: 599px) {
+        background-size: cover;
+      }
     }
   }
 
@@ -117,6 +121,8 @@ export default {
           .icon {
             width: pxToEm(60);
             height: pxToEm(75);
+            background-size: contain;
+            background-repeat: no-repeat;
           }
         }
 
@@ -147,6 +153,8 @@ export default {
         .img {
           width: pxToEm(40);
           height: pxToEm(65);
+          background-size: contain;
+          background-repeat: no-repeat;
         }
 
         .txt {

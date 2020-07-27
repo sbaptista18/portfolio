@@ -101,6 +101,26 @@ export default {
   padding: 0 pxToEm(180);
   padding-bottom: pxToEm(100);
 
+  @media screen and (min-width: 1200px) and (max-width: 1919px) {
+    padding: 0 pxToEm(180);
+  }
+
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    padding: 0 pxToEm(180);
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    padding: 0 pxToEm(180);
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 767px) {
+    padding: 0 pxToEm(40);
+  }
+
+  @media screen and (max-width: 599px) {
+    padding: 0 pxToEm(0);
+  }
+
   .line {
     background-color: #fff;
     width: pxToEm(2);
@@ -108,11 +128,19 @@ export default {
     position: absolute;
     left: 50%;
     top: pxToEm(310);
+
+    @media screen and (max-width: 1320px) {
+      display: none;
+    }
   }
 
   .logo {
     margin: pxToEm(60) 0;
     top: 0;
+
+    @media screen and (max-width: 599px) {
+      transform: translateX(-50%) scale(0.8);
+    }
   }
 
   .projects {
@@ -121,12 +149,27 @@ export default {
     margin: 0 pxToEm(80);
     margin-top: pxToEm(310);
 
+    @media screen and (min-width: 600px) and (max-width: 840px) {
+      width: 100%;
+      margin: 0;
+      margin-top: pxToEm(310);
+    }
+
+    @media screen and (max-width: 599px) {
+      margin: 0;
+      margin-top: pxToEm(310);
+    }
+
     .project {
       height: pxToEm(410);
       position: relative;
       margin-bottom: pxToEm(50);
       cursor: pointer;
       width: 50%;
+
+      @media screen and (max-width: 840px) {
+        width: 100%;
+      }
 
       &.right {
         align-self: flex-end;
@@ -154,14 +197,41 @@ export default {
         &.left {
           margin-left: pxToEm(50);
           left: 0;
+
+          @media screen and (max-width: 599px) {
+            left: unset;
+            width: 100%;
+            margin: 0;
+          }
+
+          > div {
+            @media screen and (max-width: 599px) {
+              text-align: center;
+            }
+          }
         }
 
         &.right {
           margin-right: pxToEm(50);
           right: 0;
 
+          @media screen and (max-width: 599px) {
+            right: unset;
+            width: 100%;
+            margin: 0;
+          }
+
           .year {
             text-align: right;
+            @media screen and (max-width: 599px) {
+              text-align: center;
+            }
+          }
+
+          > div {
+            @media screen and (max-width: 599px) {
+              text-align: center;
+            }
           }
         }
 
@@ -182,13 +252,29 @@ export default {
         position: absolute;
         opacity: 0.5;
         transition: 0.5s;
+        background-size: contain;
+        background-repeat: no-repeat;
 
         &.left {
           right: 0;
+
+          @media screen and (max-width: 599px) {
+            right: unset;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+          }
         }
 
         &.right {
           left: 0;
+
+          @media screen and (max-width: 599px) {
+            right: unset;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+          }
         }
       }
     }

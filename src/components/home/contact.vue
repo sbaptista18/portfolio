@@ -61,6 +61,10 @@ export default {
   .logo {
     margin: pxToEm(60) 0;
     top: 0;
+
+    @media screen and (max-width: 599px) {
+      transform: translateX(-50%) scale(0.8);
+    }
   }
 
   .contacts {

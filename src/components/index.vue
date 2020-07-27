@@ -29,9 +29,12 @@ export default {
 
     $("#project-container").removeClass("open-project");
     $(".proj").removeClass("open-project");
+    $(".proj .title").removeClass("open-project");
+    $(".proj .title").removeClass("open-details");
+    $(".proj .details").removeClass("open-details");
     $(".close-project-btn").removeClass("open-project");
     $("body, html").css("overflow", "auto");
-    $("#to-top").css("opacity", 1);
+    $("#to-top").css("display", "flex");
   },
 };
 </script>

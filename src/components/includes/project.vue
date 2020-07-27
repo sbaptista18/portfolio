@@ -142,6 +142,7 @@ export default {
         $(".proj[data-id-proj=" + p.id + "] .close-project-btn").addClass(
           "open-project"
         );
+        $("#to-top").css("display", "none");
       }
     });
   },
@@ -200,6 +201,7 @@ export default {
       position: absolute;
       opacity: 0.3;
       pointer-events: none;
+      background-position: center;
     }
 
     .close-project-btn {
@@ -213,6 +215,11 @@ export default {
       top: pxToEm(60);
       z-index: 9999;
       cursor: pointer;
+
+      @media screen and (max-width: 599px) {
+        right: pxToEm(30);
+        top: pxToEm(30);
+      }
 
       &.open-project {
         opacity: 1;
@@ -312,6 +319,10 @@ export default {
         transform: scale(1.4);
         top: 0;
         left: 0;
+
+        @media screen and (max-width: 599px) {
+          transform: scale(0.8);
+        }
       }
     }
 
@@ -343,6 +354,31 @@ export default {
       }
 
       .top {
+        @media screen and (max-width: 599px) {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .title {
+              text-align: center;
+            }
+          }
+
+          .right {
+            text-align: center;
+            margin-top: pxToEm(20);
+
+            .txt {
+              text-align: center;
+            }
+          }
+        }
+
         .left {
           width: pxToEm(125);
           .title {
@@ -370,6 +406,12 @@ export default {
       .bottom {
         height: pxToEm(90);
 
+        @media screen and (max-width: 599px) {
+          flex-direction: column;
+          margin-top: pxToEm(20);
+          align-items: center;
+        }
+
         .left {
           display: flex;
           align-items: center;
@@ -382,11 +424,20 @@ export default {
         .right {
           width: 100%;
 
+          @media screen and (max-width: 599px) {
+            width: 50%;
+            margin-top: pxToEm(20);
+          }
+
           .table {
             width: 100%;
             height: 100%;
             display: flex;
             justify-content: space-between;
+
+            @media screen and (max-width: 599px) {
+              flex-direction: column;
+            }
 
             .column {
               margin-left: pxToEm(20);
@@ -396,14 +447,34 @@ export default {
               justify-content: space-between;
               border-left: pxToEm(2) solid #fff;
 
+              @media screen and (max-width: 599px) {
+                border: none;
+                margin: 0;
+                margin-bottom: pxToEm(30);
+              }
+
               > div {
                 margin-left: pxToEm(20);
+
+                @media screen and (max-width: 599px) {
+                  margin: 0;
+                }
               }
 
               .header {
                 font-family: "Montserrat-Bold";
                 text-transform: uppercase;
                 font-size: pxToEm(18);
+
+                @media screen and (max-width: 599px) {
+                  text-align: center;
+                }
+              }
+
+              .txt {
+                @media screen and (max-width: 599px) {
+                  text-align: center;
+                }
               }
             }
           }
