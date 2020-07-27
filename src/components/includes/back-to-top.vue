@@ -21,8 +21,6 @@ export default {
     var btn = $("#to-top");
 
     window.onscroll = function (ev) {
-      console.log(window.innerHeight + window.scrollY);
-      console.log(document.documentElement.offsetHeight);
       if (
         window.innerHeight + window.scrollY >
         document.documentElement.offsetHeight

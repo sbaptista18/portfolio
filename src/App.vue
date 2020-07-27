@@ -3,6 +3,7 @@
     <app-header></app-header>
     <router-view id="main-section"></router-view>
     <to-top></to-top>
+    <project></project>
   </div>
 </template>
 
@@ -11,12 +12,14 @@
 import Header from "./components/includes/Header";
 import Footer from "./components/includes/Footer";
 import ToTop from "./components/includes/back-to-top";
+import Project from "./components/includes/project";
 
 export default {
   components: {
     appHeader: Header,
     appFooter: Footer,
     toTop: ToTop,
+    project: Project,
   },
 };
 </script>

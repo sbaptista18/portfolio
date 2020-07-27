@@ -21,14 +21,6 @@
       <div class="line"></div>
     </div>
 
-    <div class="close-project-btn">
-      <div class="text">close project</div>
-      <div class="circle">
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-    </div>
-
     <div class="menu-window">
       <div class="projects-list">
         <router-link to="/">Harmonizando</router-link>
@@ -228,59 +220,6 @@ export default {
 
       &:nth-child(2) {
         transform: rotate(-45deg);
-      }
-    }
-  }
-
-  .close-project-btn {
-    width: pxToEm(150);
-    height: pxToEm(50);
-    position: relative;
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    right: pxToEm(60);
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 9999;
-    cursor: pointer;
-
-    &.open-project {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .text {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: pxToEm(14);
-    }
-
-    .circle {
-      border: pxToEm(2) solid #eaeaea;
-      border-radius: 50%;
-      width: pxToEm(46);
-      height: pxToEm(46);
-      position: absolute;
-      right: 0;
-
-      .line {
-        background-color: #eaeaea;
-        width: pxToEm(30);
-        height: pxToEm(2);
-        position: absolute;
-        top: 50%;
-        left: 20%;
-
-        &:nth-child(1) {
-          transform: rotate(45deg);
-        }
-
-        &:nth-child(2) {
-          transform: rotate(-45deg);
-        }
       }
     }
   }

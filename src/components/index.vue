@@ -25,7 +25,13 @@ export default {
     },
   },
   mounted() {
-    this.offsetTop();
+    // this.offsetTop();
+
+    $("#project-container").removeClass("open-project");
+    $(".proj").removeClass("open-project");
+    $(".close-project-btn").removeClass("open-project");
+    $("body, html").css("overflow", "auto");
+    $("#to-top").css("opacity", 1);
   },
 };
 </script>

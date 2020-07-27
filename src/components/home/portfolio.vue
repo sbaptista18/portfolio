@@ -12,12 +12,14 @@
     </div>
     <div class="projects">
       <router-link
+        :id="p.code"
+        :to="p.url"
+        class="project"
         v-for="p in projects"
         :key="p.id"
-        :to="p.url"
         :class="{'left': p.id % 2 === 0, 'right': p.id % 2 !== 0}"
       >
-        <div class="project">
+        <div :data-id-project="p.id" @click="openProject(p.id)">
           <div
             class="img"
             :class="{'right': p.id % 2 === 0, 'left': p.id % 2 !== 0}"
@@ -45,26 +47,40 @@ export default {
         {
           id: 1,
           name: "Ana Carolina Pereira",
+          code: "ana-carolina-pereira",
           year: "2020",
           img_src: mockup,
-          url: "/",
+          url: "/project/ana-carolina-pereira",
         },
         {
           id: 2,
           name: "TwoBe Creative",
+          code: "twobe-creative",
           year: "2020",
           img_src: mockup,
-          url: "/",
+          url: "/project/twobe-creative",
         },
         {
           id: 3,
           name: "Harmonizando",
+          code: "harmonizando",
           year: "2020",
           img_src: mockup,
-          url: "/",
+          url: "/project/harmonizando",
         },
       ],
     };
+  },
+  methods: {
+    openProject(id) {
+      $("#project-container").addClass("open-project");
+      $(".proj[data-id-proj=" + id + "]").addClass("open-project");
+      $(".proj[data-id-proj=" + id + "] .close-project-btn").addClass(
+        "open-project"
+      );
+      $("body, html").css("overflow", "hidden");
+      $("#to-top").css("opacity", 0);
+    },
   },
 };
 </script>
@@ -105,78 +121,74 @@ export default {
     margin: 0 pxToEm(80);
     margin-top: pxToEm(310);
 
-    a {
+    .project {
+      height: pxToEm(410);
+      position: relative;
+      margin-bottom: pxToEm(50);
+      cursor: pointer;
       width: 50%;
 
       &.right {
         align-self: flex-end;
       }
 
-      .project {
-        height: pxToEm(410);
-        width: 100%;
-        position: relative;
-        margin-bottom: pxToEm(50);
-        cursor: pointer;
-
-        &:hover {
-          .text {
-            color: #0086d4;
-            font-weight: bold;
-          }
-
-          .img {
-            opacity: 1;
-          }
-        }
-
+      &:hover {
         .text {
-          display: flex;
-          flex-direction: column;
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          transition: 0.5s;
-
-          &.left {
-            margin-left: pxToEm(50);
-            left: 0;
-          }
-
-          &.right {
-            margin-right: pxToEm(50);
-            right: 0;
-
-            .year {
-              text-align: right;
-            }
-          }
-
-          .year {
-            font-size: pxToEm(16);
-            font-family: "Montserrat-Bold";
-          }
-
-          .name {
-            font-size: pxToEm(36);
-            font-family: "Montserrat-Regular";
-          }
+          color: #0086d4;
+          font-weight: bold;
         }
 
         .img {
-          width: pxToEm(700);
-          height: pxToEm(410);
-          position: absolute;
-          opacity: 0.5;
-          transition: 0.5s;
+          opacity: 1;
+        }
+      }
 
-          &.left {
-            right: 0;
-          }
+      .text {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 0.5s;
 
-          &.right {
-            left: 0;
+        &.left {
+          margin-left: pxToEm(50);
+          left: 0;
+        }
+
+        &.right {
+          margin-right: pxToEm(50);
+          right: 0;
+
+          .year {
+            text-align: right;
           }
+        }
+
+        .year {
+          font-size: pxToEm(16);
+          font-family: "Montserrat-Bold";
+        }
+
+        .name {
+          font-size: pxToEm(36);
+          font-family: "Montserrat-Regular";
+        }
+      }
+
+      .img {
+        width: pxToEm(700);
+        height: pxToEm(410);
+        position: absolute;
+        opacity: 0.5;
+        transition: 0.5s;
+
+        &.left {
+          right: 0;
+        }
+
+        &.right {
+          left: 0;
         }
       }
     }
