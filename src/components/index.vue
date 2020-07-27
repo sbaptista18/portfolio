@@ -9,27 +9,26 @@
 
 <script>
 /* eslint-disable */
-import topSection from './home/top-section'
-import portfolio from './home/portfolio'
-import contact from './home/contact'
+import topSection from "./home/top-section";
+import portfolio from "./home/portfolio";
+import contact from "./home/contact";
 
 export default {
   components: {
     topSection: topSection,
     portfolio: portfolio,
-    contact: contact
+    contact: contact,
   },
   methods: {
-    offsetTop(){
-      $('#portfolio').css('margin-top', $('#top-section').height())
-    }
+    offsetTop() {
+      // $('#portfolio').css('margin-top', $('#top-section').height())
+    },
   },
-  mounted(){
+  mounted() {
     this.offsetTop();
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-
 </style>

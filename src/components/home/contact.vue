@@ -9,12 +9,39 @@
         <div class="txt">want to know more?</div>
       </div>
     </div>
+    <div class="contacts">
+      <div class="email">
+        <h2>Email</h2>
+        <p>geral@silviabaptista.com</p>
+      </div>
+      <div class="social">
+        <h2>Social Media</h2>
+        <div class="icons">
+          <p>
+            <img :src="fb" alt />
+          </p>
+          <p>
+            <img :src="ig" alt />
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
-export default {};
+import fb from "../../assets/fb.svg";
+import ig from "../../assets/ig.svg";
+
+export default {
+  data() {
+    return {
+      fb,
+      ig,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -26,13 +53,35 @@ export default {};
 }
 
 #contact {
-    height: pxToEm(400);
-    position: relative;
-    background-color: #707070;
+  height: auto;
+  position: relative;
+  background-color: #707070;
+  display: flex;
 
-    .logo {
-        margin: pxToEm(60) 0;
-        top: 0;
+  .logo {
+    margin: pxToEm(60) 0;
+    top: 0;
+  }
+
+  .contacts {
+    max-width: pxToEm(1400);
+    width: 100%;
+    margin: auto;
+    display: flex;
+    margin-top: pxToEm(250);
+    margin-bottom: pxToEm(50);
+    justify-content: space-around;
+
+    > div {
+      text-align: center;
     }
+
+    .social {
+      div {
+        justify-content: space-between;
+        display: flex;
+      }
+    }
+  }
 }
 </style>
