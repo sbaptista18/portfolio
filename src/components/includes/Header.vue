@@ -10,13 +10,13 @@
       </div>
     </div>
 
-    <div class="menu-btn">
+    <div class="menu-btn" @click="openMenu();">
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
     </div>
 
-    <div class="close-menu-btn">
+    <div class="close-menu-btn" @click="closeMenu();">
       <div class="line"></div>
       <div class="line"></div>
     </div>
@@ -28,25 +28,84 @@
         <div class="line"></div>
       </div>
     </div>
+
+    <div class="menu-window">
+      <div class="projects-list">
+        <router-link to="/">Harmonizando</router-link>
+        <router-link to="/">Ana Carolina Pereira</router-link>
+        <router-link to="/">TwoBe Creative</router-link>
+      </div>
+      <div class="about-section">
+        <div class="about">
+          <div class="title">About Sílvia Baptista</div>
+          <div class="text">
+            <p>Web Developer aspiring to work on e-commerce platforms, with a great sense of team work.</p>
+            <p>When a job is in her hands, she makes sure it's done and delivered with standards.</p>
+          </div>
+        </div>
+
+        <div class="contact">
+          <div class="title">Contact me</div>
+          <div class="text">
+            <p>
+              <a href="mailto:geral@silviabaptista.com">geral@silviabaptista.com</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <div class="title">Follow me</div>
+          <div class="text">
+            <p>
+              <img :src="fb" alt />
+            </p>
+            <p>
+              <img :src="ig" alt />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
+import fb from "../../assets/fb.svg";
+import ig from "../../assets/ig.svg";
+
 export default {
+  data() {
+    return {
+      fb,
+      ig,
+    };
+  },
   methods: {
     fadeLogo() {
-      $(window).scroll(function() {
+      $(window).scroll(function () {
         var st = $(this).scrollTop();
         $("#logo").css({
-            'opacity' : 1 - st/300
+          opacity: 1 - st / 300,
         });
       });
-    }
+    },
+    openMenu() {
+      $(".menu-window").addClass("open-menu");
+      $(".menu-btn").addClass("open-menu");
+      $(".close-menu-btn").addClass("open-menu");
+      $("body, html").css("overflow", "hidden");
+    },
+    closeMenu() {
+      $(".menu-window").removeClass("open-menu");
+      $(".menu-btn").removeClass("open-menu");
+      $(".close-menu-btn").removeClass("open-menu");
+      $("body, html").css("overflow", "auto");
+    },
   },
   mounted() {
     this.fadeLogo();
-  }
+  },
 };
 </script>
 
@@ -121,6 +180,8 @@ export default {
     left: pxToEm(60);
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
+    transition: 0.5s;
 
     &.open-menu {
       opacity: 0;
@@ -144,6 +205,9 @@ export default {
     left: pxToEm(60);
     top: 50%;
     transform: translateY(-50%);
+    z-index: 9999;
+    cursor: pointer;
+    transition: 0.5s;
 
     &.open-menu {
       opacity: 1;
@@ -178,6 +242,8 @@ export default {
     right: pxToEm(60);
     top: 50%;
     transform: translateY(-50%);
+    z-index: 9999;
+    cursor: pointer;
 
     &.open-project {
       opacity: 1;
@@ -214,6 +280,65 @@ export default {
 
         &:nth-child(2) {
           transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .menu-window {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(46, 46, 46, 0.95);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+
+    &.open-menu {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    > div {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      padding-top: pxToEm(190);
+
+      > a {
+        font-size: 32px;
+        font-family: "Montserrat-Bold";
+        margin-bottom: pxToEm(50);
+      }
+
+      > div {
+        margin-bottom: pxToEm(100);
+
+        .title {
+          font-size: 32px;
+          font-family: "Montserrat-Bold";
+        }
+
+        .text {
+          font-size: 26px;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .social-links {
+        .text {
+          flex-direction: row;
+
+          p {
+            img {
+              height: 100%;
+              margin-right: pxToEm(50);
+            }
+          }
         }
       }
     }
