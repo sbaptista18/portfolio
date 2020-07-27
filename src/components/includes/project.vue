@@ -77,6 +77,7 @@ export default {
   data() {
     return {
       showMain: false,
+      title: "",
       arrow,
       projs: [
         {
@@ -84,7 +85,7 @@ export default {
           name: "Ana Carolina Pereira",
           code: "ana-carolina-pereira",
           year: "2020",
-          type: "company website",
+          type: "Company wWbsite",
           about:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis porta sapien. Ut pellentesque nulla quis consectetur pellentesque. Vestibulum augue nisl, bibendum quis purus sed, viverra auctor nibh. Praesent vitae convallis mi, in dignissim est. Mauris aliquam nisl sed sem sagittis, in pellentesque ipsum vulputate.",
           tech: "VueJS",
@@ -97,7 +98,7 @@ export default {
           name: "TwoBe Creative",
           code: "twobe-creative",
           year: "2020",
-          type: "company website",
+          type: "Company wWbsite",
           about:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis porta sapien. Ut pellentesque nulla quis consectetur pellentesque. Vestibulum augue nisl, bibendum quis purus sed, viverra auctor nibh. Praesent vitae convallis mi, in dignissim est. Mauris aliquam nisl sed sem sagittis, in pellentesque ipsum vulputate.",
           tech: "VueJS",
@@ -110,7 +111,7 @@ export default {
           name: "Harmonizando",
           code: "harmonizando",
           year: "2020",
-          type: "company website",
+          type: "Company wWbsite",
           about:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis porta sapien. Ut pellentesque nulla quis consectetur pellentesque. Vestibulum augue nisl, bibendum quis purus sed, viverra auctor nibh. Praesent vitae convallis mi, in dignissim est. Mauris aliquam nisl sed sem sagittis, in pellentesque ipsum vulputate.",
           tech: "VueJS",
@@ -143,8 +144,46 @@ export default {
           "open-project"
         );
         $("#to-top").css("display", "none");
+
+        vm.$data.title =
+          p.name +
+          " - " +
+          p.type +
+          " - Sílvia Baptista - Webdevelopment Portfolio";
+        vm.$metaInfo.meta[0].content = p.about;
+        vm.$metaInfo.meta[4].content =
+          p.name +
+          " - " +
+          p.type +
+          " - Sílvia Baptista - Webdevelopment Portfolio";
+        vm.$metaInfo.meta[5].content = p.about;
       }
     });
+  },
+  metaInfo() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          name: "description",
+          content: "",
+        },
+        { name: "robots", content: "index,follow" },
+        {
+          property: "og:site_name",
+          content: "Sílvia Baptista - Webdeveloper Portfolio",
+        },
+        { property: "og:type", content: "website" },
+        {
+          property: "og:title",
+          content: "",
+        },
+        {
+          property: "og:description",
+          content: "",
+        },
+      ],
+    };
   },
 };
 </script>

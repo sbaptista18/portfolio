@@ -36,6 +36,33 @@ export default {
     $("body, html").css("overflow", "auto");
     $("#to-top").css("display", "flex");
   },
+  metaInfo() {
+    return {
+      title: "Sílvia Baptista - Webdeveloper Portfolio",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Webdevelopment portfolio featuring my most recent projects using VueJS!",
+        },
+        { name: "robots", content: "index,follow" },
+        {
+          property: "og:site_name",
+          content: "Sílvia Baptista - Webdeveloper Portfolio",
+        },
+        { property: "og:type", content: "website" },
+        {
+          property: "og:title",
+          content: "Sílvia Baptista - Webdeveloper Portfolio",
+        },
+        {
+          property: "og:description",
+          content:
+            "Webdevelopment portfolio featuring my most recent projects using VueJS!",
+        },
+      ],
+    };
+  },
 };
 </script>
 
