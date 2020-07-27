@@ -2,7 +2,7 @@
   <div id="app">
     <app-header></app-header>
     <router-view id="main-section"></router-view>
-    <!-- <app-footer></app-footer> -->
+    <to-top></to-top>
   </div>
 </template>
 
@@ -10,12 +10,14 @@
 /* eslint-disable */
 import Header from "./components/includes/Header";
 import Footer from "./components/includes/Footer";
+import ToTop from "./components/includes/back-to-top";
 
 export default {
   components: {
     appHeader: Header,
-    appFooter: Footer
-  }
+    appFooter: Footer,
+    toTop: ToTop,
+  },
 };
 </script>
 
@@ -28,7 +30,7 @@ export default {
 }
 
 @font-face {
-  font-family: 'Montserrat-Regular';
+  font-family: "Montserrat-Regular";
   src: url("../src/assets/fonts/Montserrat-Regular.ttf");
 }
 
@@ -46,8 +48,8 @@ body {
   font-size: 16px;
   overflow-y: inherit;
   color: #eaeaea;
-  font-family: 'Montserrat-Regular';
-  background-color: #2E2E2E;
+  font-family: "Montserrat-Regular";
+  background-color: #2e2e2e;
 
   &.open {
     overflow-y: hidden;
@@ -67,6 +69,10 @@ body {
   }
 }
 
+html {
+  height: 100%;
+}
+
 #app {
   height: auto;
   display: flex;
@@ -82,81 +88,81 @@ body {
 }
 
 .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+
+  .name {
+    width: pxToEm(568);
+    height: pxToEm(129);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .txt {
+      font-size: pxToEm(36);
+      font-family: "Montserrat-Bold";
+      text-transform: uppercase;
+    }
+  }
+
+  .subtext {
+    width: pxToEm(249);
+    height: pxToEm(51);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 50%;
+    top: 80%;
 
+    .txt {
+      font-size: pxToEm(16);
+      font-family: "Montserrat-Bold";
+      text-transform: uppercase;
+    }
+  }
+
+  &.white {
     .name {
-      width: pxToEm(568);
-      height: pxToEm(129);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border: pxToEm(13) solid #0086d4;
+      background-color: #eaeaea;
 
       .txt {
-        font-size: pxToEm(36);
-        font-family: 'Montserrat-Bold';
-        text-transform: uppercase;
+        color: #2e2e2e;
       }
     }
 
     .subtext {
-      width: pxToEm(249);
-      height: pxToEm(51);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 80%;
+      background-color: #0086d4;
 
       .txt {
-        font-size: pxToEm(16);
-        font-family: 'Montserrat-Bold';
-        text-transform: uppercase;
-      }
-    }
-
-    &.white {
-      .name {
-        border: pxToEm(13) solid #0086D4;
-        background-color: #eaeaea;
-
-        .txt {
-          color: #2e2e2e;
-        }
-      }
-
-      .subtext {
-        background-color: #0086D4;
-
-        .txt {
-          color: #eaeaea;
-        }
-      }
-    }
-
-    &.blue {
-      .name {
-        border: pxToEm(13) solid #2e2e2e;
-        background-color: #0086D4;
-
-        .txt {
-          color: #2e2e2e;
-        }
-      }
-
-      .subtext {
-        background-color: #eaeaea;
-
-        .txt {
-          color: #2e2e2e;
-        }
+        color: #eaeaea;
       }
     }
   }
+
+  &.blue {
+    .name {
+      border: pxToEm(13) solid #2e2e2e;
+      background-color: #0086d4;
+
+      .txt {
+        color: #2e2e2e;
+      }
+    }
+
+    .subtext {
+      background-color: #eaeaea;
+
+      .txt {
+        color: #2e2e2e;
+      }
+    }
+  }
+}
 
 .movement {
   position: relative;
