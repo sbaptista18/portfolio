@@ -38,6 +38,8 @@
 <script>
 /* eslint-disable */
 import mockup from "../../assets/mockup.jpg";
+import mockup_harmoni from "../../assets/harmoni-mockup.jpg";
+import mockup_anacarolina from "../../assets/anacarolina-mockup.jpg";
 
 export default {
   data() {
@@ -46,27 +48,19 @@ export default {
       projects: [
         {
           id: 1,
-          name: "Ana Carolina Pereira",
-          code: "ana-carolina-pereira",
-          year: "2020",
-          img_src: mockup,
-          url: "/project/ana-carolina-pereira",
-        },
-        {
-          id: 2,
-          name: "TwoBe Creative",
-          code: "twobe-creative",
-          year: "2020",
-          img_src: mockup,
-          url: "/project/twobe-creative",
-        },
-        {
-          id: 3,
           name: "Harmonizando",
           code: "harmonizando",
           year: "2020",
-          img_src: mockup,
+          img_src: mockup_harmoni,
           url: "/project/harmonizando",
+        },
+        {
+          id: 2,
+          name: "Ana Carolina Pereira",
+          code: "ana-carolina-pereira",
+          year: "2020",
+          img_src: mockup_anacarolina,
+          url: "/project/ana-carolina-pereira",
         },
       ],
     };

@@ -14,7 +14,7 @@
 export default {
   methods: {
     backToTop() {
-      $("html, body").animate({ scrollTop: 0 }, 1500);
+      $("html, body").animate({ scrollTop: 0 }, 500);
     },
   },
   mounted() {

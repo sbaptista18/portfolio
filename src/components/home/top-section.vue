@@ -20,7 +20,7 @@
           <div class="copy">
             <div class="line">porto, born and raised</div>
             <div class="line">3 years of experience</div>
-            <div class="line">passionate about videogames</div>
+            <div class="line">geek, artsy, hands-on</div>
           </div>
         </div>
 

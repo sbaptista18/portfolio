@@ -72,6 +72,8 @@
 /* eslint-disable */
 import mockup from "../../assets/mockup.jpg";
 import arrow from "../../assets/arrow.svg";
+import mockup_harmoni from "../../assets/harmoni-mockup.jpg";
+import mockup_anacarolina from "../../assets/anacarolina-mockup.jpg";
 
 export default {
   data() {
@@ -82,42 +84,29 @@ export default {
       projs: [
         {
           id: 1,
-          name: "Ana Carolina Pereira",
-          code: "ana-carolina-pereira",
-          year: "2020",
-          type: "Company wWbsite",
-          about:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis porta sapien. Ut pellentesque nulla quis consectetur pellentesque. Vestibulum augue nisl, bibendum quis purus sed, viverra auctor nibh. Praesent vitae convallis mi, in dignissim est. Mauris aliquam nisl sed sem sagittis, in pellentesque ipsum vulputate.",
-          tech: "VueJS",
-          release: "August 2020",
-          img_src: mockup,
-          url: "https://anacarolina.silviabaptista.com",
-        },
-        {
-          id: 2,
-          name: "TwoBe Creative",
-          code: "twobe-creative",
-          year: "2020",
-          type: "Company wWbsite",
-          about:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis porta sapien. Ut pellentesque nulla quis consectetur pellentesque. Vestibulum augue nisl, bibendum quis purus sed, viverra auctor nibh. Praesent vitae convallis mi, in dignissim est. Mauris aliquam nisl sed sem sagittis, in pellentesque ipsum vulputate.",
-          tech: "VueJS",
-          release: "August 2020",
-          img_src: mockup,
-          url: "https://www.twobecreative.pt",
-        },
-        {
-          id: 3,
           name: "Harmonizando",
           code: "harmonizando",
           year: "2020",
-          type: "Company wWbsite",
+          type: "Company Website",
           about:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis porta sapien. Ut pellentesque nulla quis consectetur pellentesque. Vestibulum augue nisl, bibendum quis purus sed, viverra auctor nibh. Praesent vitae convallis mi, in dignissim est. Mauris aliquam nisl sed sem sagittis, in pellentesque ipsum vulputate.",
-          tech: "VueJS",
+            "This project was about building a SPA for an hollistic clinic. It was major upgrade from the old website, since this one loads faster, has less information, and has responsive behaviour.",
+          tech: "VueJS, PHP, MySQL",
           release: "August 2020",
-          img_src: mockup,
+          img_src: mockup_harmoni,
           url: "https://beta.harmonizando.com",
+        },
+        {
+          id: 2,
+          name: "Ana Carolina Pereira",
+          code: "ana-carolina-pereira",
+          year: "2020",
+          type: "Company Website",
+          about:
+            "This project was about building a SPA for a psychology clinic. It's the client's first website, and it includes a brand new backoffice and a responsive design.",
+          tech: "VueJS, PHP, MySQL",
+          release: "September 2020",
+          img_src: mockup_anacarolina,
+          url: "https://beta.anacarolinapereira.pt/",
         },
       ],
     };
@@ -240,7 +229,7 @@ export default {
       position: absolute;
       opacity: 0.3;
       pointer-events: none;
-      background-position: center;
+      background-position: bottom right;
     }
 
     .close-project-btn {

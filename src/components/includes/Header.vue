@@ -23,9 +23,8 @@
 
     <div class="menu-window">
       <div class="projects-list">
-        <router-link to="/project/ana-carolina-pereira">Ana Carolina Pereira</router-link>
-        <router-link to="/project/twobe-creative">TwoBe Creative</router-link>
         <router-link to="/project/harmonizando">Harmonizando</router-link>
+        <router-link to="/project/ana-carolina-pereira">Ana Carolina Pereira</router-link>
       </div>
       <div class="about-section">
         <div class="about">
