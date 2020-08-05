@@ -44,7 +44,7 @@
           </div>
         </div>
 
-        <div class="social-links">
+        <!-- <div class="social-links">
           <div class="title">Follow me</div>
           <div class="text">
             <p>
@@ -54,7 +54,7 @@
               <img :src="ig" alt />
             </p>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>

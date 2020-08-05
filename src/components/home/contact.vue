@@ -14,7 +14,7 @@
         <h2>Email</h2>
         <p>geral@silviabaptista.com</p>
       </div>
-      <div class="social">
+      <!-- <div class="social">
         <h2>Social Media</h2>
         <div class="icons">
           <p>
@@ -24,7 +24,7 @@
             <img :src="ig" alt />
           </p>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
