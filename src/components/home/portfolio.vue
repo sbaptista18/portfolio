@@ -37,14 +37,12 @@
 
 <script>
 /* eslint-disable */
-import mockup from "../../assets/mockup.jpg";
 import mockup_harmoni from "../../assets/harmoni-mockup.jpg";
 import mockup_anacarolina from "../../assets/anacarolina-mockup.jpg";
 
 export default {
   data() {
     return {
-      mockup,
       projects: [
         {
           id: 1,
@@ -76,6 +74,19 @@ export default {
       $("#to-top").css("opacity", 0);
     },
   },
+  // mounted() {
+  //   var projects = this.projects;
+  //   var map = Array.prototype.map;
+  //   var imgs_array = [];
+
+  //   map.call(projects, function (p) {
+  //     imgs_array.push(p.img_src);
+  //   });
+
+  //   if (localStorage.getItem("projects")) {
+  //     console.log(localStorage);
+  //   }
+  // },
 };
 </script>
 

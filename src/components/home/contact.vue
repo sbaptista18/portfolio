@@ -12,7 +12,9 @@
     <div class="contacts">
       <div class="email">
         <h2>Email</h2>
-        <p>geral@silviabaptista.com</p>
+        <p>
+          <a href="mailto:geral@silviabaptista.com">geral@silviabaptista.com</a>
+        </p>
       </div>
       <!-- <div class="social">
         <h2>Social Media</h2>
